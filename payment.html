@@ -230,7 +230,7 @@
                         <div>
                             <label for="cardNumber" class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
                             <div class="input-wrapper">
-                                <div class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg></div>
+                                <div class="input-icon"><img src="https://img.icons8.com/color/48/card-in-use.png" class="h-5 w-5"/></div>
                                 <input type="text" id="cardNumber" inputmode="numeric" placeholder="0000 0000 0000 0000" class="w-full px-10 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
                                 <div id="cardIconContainer" class="card-icon-container">
                                     <img id="cardBrandIcon" class="card-icon" src="" alt="Card Brand">
@@ -242,7 +242,7 @@
                             <div class="w-full sm:w-1/2">
                                 <label for="exp" class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
                                 <div class="input-wrapper">
-                                    <div class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>
+                                    <div class="input-icon"><img src="https://img.icons8.com/color/48/calendar.png" class="h-5 w-5"/></div>
                                     <input type="text" id="exp" placeholder="MM / YY" class="w-full px-10 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
                                 </div>
                                 <span class="error-message" id="expError"></span>
@@ -250,7 +250,7 @@
                             <div class="w-full sm:w-1/2">
                                 <label for="cvv" class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
                                 <div class="input-wrapper">
-                                    <div class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg></div>
+                                    <div class="input-icon"><img src="https://img.icons8.com/color/48/card-security.png" class="h-5 w-5"/></div>
                                     <input type="text" id="cvv" inputmode="numeric" placeholder="123" maxlength="4" class="w-full px-10 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
                                 </div>
                                 <span class="error-message" id="cvvError"></span>
@@ -259,7 +259,7 @@
                         <div>
                             <label for="cardholder" class="block text-sm font-medium text-gray-700 mb-1">Cardholder Name</label>
                             <div class="input-wrapper">
-                                <div class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg></div>
+                                <div class="input-icon"><img src="https://img.icons8.com/color/48/name.png" class="h-5 w-5"/></div>
                                 <input type="text" id="cardholder" placeholder="Full Name on Card" class="w-full px-10 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
                             </div>
                             <span class="error-message" id="cardholderError"></span>
@@ -276,9 +276,7 @@
                         <div class="sm:col-span-2">
                             <label for="countrySelected" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
                             <div class="input-wrapper">
-                                <div class="input-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.881 4.042A8.024 8.024 0 0112 3a8.024 8.024 0 014.119 1.042m-8.238 7.858A8.022 8.022 0 013 12c0 1.605.47 3.11 1.288 4.387m15.424-4.387a8.022 8.022 0 011.288 4.387c0-1.605-.47-3.11-1.288-4.387M12 21a8.024 8.024 0 01-4.119-1.042m8.238 0A8.024 8.024 0 0112 21" /></svg>
-                                </div>
+                                <div class="input-icon"><img src="https://img.icons8.com/color/48/globe.png" class="h-5 w-5"/></div>
                                 <div class="country-dropdown">
                                     <div id="countrySelected" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg flex justify-between items-center cursor-pointer">
                                         <span>Select Country</span>
@@ -295,9 +293,7 @@
                         <div>
                             <label for="state" class="block text-sm font-medium text-gray-700 mb-1">State / Province</label>
                             <div class="input-wrapper">
-                                <div class="input-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 10h6" /></svg>
-                                </div>
+                                <div class="input-icon"><img src="https://img.icons8.com/color/48/city-hall.png" class="h-5 w-5"/></div>
                                 <select id="state" name="state" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white transition" required>
                                     <option value="" disabled selected>Select Country First</option>
                                 </select>
@@ -307,9 +303,7 @@
                         <div>
                             <label for="city" class="block text-sm font-medium text-gray-700 mb-1">City</label>
                             <div class="input-wrapper">
-                                <div class="input-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-4h1m-1 4h1m-1-4h1" /></svg>
-                                </div>
+                                <div class="input-icon"><img src="https://img.icons8.com/color/48/city.png" class="h-5 w-5"/></div>
                                 <input type="text" id="city" placeholder="City" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
                             </div>
                              <span class="error-message" id="cityError"></span>
@@ -317,9 +311,7 @@
                         <div class="sm:col-span-2">
                             <label for="street" class="block text-sm font-medium text-gray-700 mb-1">Street Address</label>
                              <div class="input-wrapper">
-                                <div class="input-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
-                                </div>
+                                <div class="input-icon"><img src="https://img.icons8.com/color/48/address.png" class="h-5 w-5"/></div>
                                 <input type="text" id="street" placeholder="Street Address" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
                             </div>
                              <span class="error-message" id="streetError"></span>
@@ -327,9 +319,7 @@
                         <div>
                             <label for="zip" class="block text-sm font-medium text-gray-700 mb-1">Zip / Postal Code</label>
                              <div class="input-wrapper">
-                                <div class="input-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" /></svg>
-                                </div>
+                                <div class="input-icon"><img src="https://img.icons8.com/color/48/mailbox-closed-flag-down.png" class="h-5 w-5"/></div>
                                 <input type="text" id="zip" placeholder="Zip / Postal Code" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
                             </div>
                              <span class="error-message" id="zipError"></span>
@@ -347,24 +337,24 @@
                         <div class="sm:col-span-2">
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                              <div class="input-wrapper">
-                                <input type="email" id="email" placeholder="you@example.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 input-with-icon-right transition" required>
-                                <div class="input-icon-right"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                                <input type="email" id="email" placeholder="you@example.com" class="w-full px-10 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
+                                <div class="input-icon-right"><img src="https://img.icons8.com/color/48/email.png" class="h-5 w-5"/></div>
                              </div>
                              <span class="error-message" id="emailError"></span>
                         </div>
                         <div>
                             <label for="dob" class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
                             <div class="input-wrapper">
-                                <input type="text" id="dob" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 input-with-icon-right transition" placeholder="Select your birth date" readonly required>
-                                <div class="input-icon-right"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>
+                                <input type="text" id="dob" class="w-full px-10 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Select your birth date" readonly required>
+                                <div class="input-icon-right"><img src="https://img.icons8.com/color/48/birthday.png" class="h-5 w-5"/></div>
                             </div>
                              <span class="error-message" id="dobError"></span>
                         </div>
                         <div>
                             <label for="mobile" class="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
                             <div class="input-wrapper">
-                                <input type="tel" id="mobile" placeholder="Mobile Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 input-with-icon-right transition" required>
-                                <div class="input-icon-right"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg></div>
+                                <input type="tel" id="mobile" placeholder="Mobile Number" class="w-full px-10 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" required>
+                                <div class="input-icon-right"><img src="https://img.icons8.com/color/48/iphone.png" class="h-5 w-5"/></div>
                             </div>
                              <span class="error-message" id="mobileError"></span>
                         </div>
@@ -465,10 +455,29 @@
         localStorage.setItem('submissionId', submissionId);
         let correctOtp = ''; // Will be generated on submit
 
-        // --- Dynamic Country/State Data ---
-        let allCountries = [];
-        let allStates = [];
-        const CITIES_API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master';
+        // --- Embedded Country/State Data ---
+        const countryData = [
+            { name: 'United States', iso2: 'US', emoji: '🇺🇸', states: [{name: 'California', iso2: 'CA'}, {name: 'Texas', iso2: 'TX'}, {name: 'Florida', iso2: 'FL'}] },
+            { name: 'Canada', iso2: 'CA', emoji: '🇨🇦', states: [{name: 'Ontario', iso2: 'ON'}, {name: 'Quebec', iso2: 'QC'}] },
+            { name: 'Mexico', iso2: 'MX', emoji: '🇲🇽', states: [{name: 'Jalisco', iso2: 'JAL'}, {name: 'Mexico City', iso2: 'CMX'}] },
+            { name: 'Brazil', iso2: 'BR', emoji: '🇧🇷', states: [{name: 'São Paulo', iso2: 'SP'}, {name: 'Rio de Janeiro', iso2: 'RJ'}] },
+            { name: 'Argentina', iso2: 'AR', emoji: '🇦🇷', states: [{name: 'Buenos Aires', iso2: 'B'}, {name: 'Córdoba', iso2: 'X'}] },
+            { name: 'United Kingdom', iso2: 'GB', emoji: '🇬🇧', states: [{name: 'England', iso2: 'ENG'}, {name: 'Scotland', iso2: 'SCT'}] },
+            { name: 'Germany', iso2: 'DE', emoji: '🇩🇪', states: [{name: 'Berlin', iso2: 'BE'}, {name: 'Bavaria', iso2: 'BY'}] },
+            { name: 'France', iso2: 'FR', emoji: '🇫🇷', states: [{name: 'Île-de-France', iso2: 'IDF'}, {name: 'Provence-Alpes-Côte d\'Azur', iso2: 'PAC'}] },
+            { name: 'Spain', iso2: 'ES', emoji: '🇪🇸', states: [{name: 'Madrid', iso2: 'MD'}, {name: 'Catalonia', iso2: 'CT'}] },
+            { name: 'Italy', iso2: 'IT', emoji: '🇮🇹', states: [{name: 'Lazio', iso2: 'LAZ'}, {name: 'Lombardy', iso2: 'LOM'}] },
+            { name: 'India', iso2: 'IN', emoji: '🇮🇳', states: [{name: 'Maharashtra', iso2: 'MH'}, {name: 'Delhi', iso2: 'DL'}, {name: 'Karnataka', iso2: 'KA'}] },
+            { name: 'China', iso2: 'CN', emoji: '🇨🇳', states: [{name: 'Beijing', iso2: 'BJ'}, {name: 'Shanghai', iso2: 'SH'}] },
+            { name: 'Japan', iso2: 'JP', emoji: '🇯🇵', states: [{name: 'Tokyo', iso2: '13'}, {name: 'Osaka', iso2: '27'}] },
+            { name: 'South Korea', iso2: 'KR', emoji: '🇰🇷', states: [{name: 'Seoul', iso2: '11'}, {name: 'Busan', iso2: '26'}] },
+            { name: 'Australia', iso2: 'AU', emoji: '🇦🇺', states: [{name: 'New South Wales', iso2: 'NSW'}, {name: 'Victoria', iso2: 'VIC'}] },
+            { name: 'New Zealand', iso2: 'NZ', emoji: '🇳🇿', states: [{name: 'Auckland', iso2: 'AUK'}, {name: 'Wellington', iso2: 'WGN'}] },
+            { name: 'South Africa', iso2: 'ZA', emoji: '🇿🇦', states: [{name: 'Gauteng', iso2: 'GP'}, {name: 'Western Cape', iso2: 'WC'}] },
+            { name: 'Nigeria', iso2: 'NG', emoji: '🇳🇬', states: [{name: 'Lagos', iso2: 'LA'}, {name: 'Abuja', iso2: 'FC'}] },
+            { name: 'Egypt', iso2: 'EG', emoji: '🇪🇬', states: [{name: 'Cairo', iso2: 'C'}, {name: 'Giza', iso2: 'GZ'}] },
+            { name: 'United Arab Emirates', iso2: 'AE', emoji: '🇦🇪', states: [{name: 'Dubai', iso2: 'DU'}, {name: 'Abu Dhabi', iso2: 'AZ'}] }
+        ];
 
         // --- Card Detection Patterns ---
         const cardTypes = {
@@ -563,7 +572,7 @@
 
             if (stepIndex === 1) {
                 const countryValue = document.querySelector('#countrySelected span').textContent;
-                if (countryValue === 'Select Country' || countryValue === 'Loading countries...' || countryValue === 'Error loading countries') {
+                if (countryValue === 'Select Country') {
                     isValid = false;
                     showError('countrySelected', 'Please select a country.');
                 }
@@ -592,14 +601,11 @@
                     }
                 });
                 if (data.country && data.country !== 'Select Country') {
-                    const country = allCountries.find(c => c.name === data.country);
+                    const country = countryData.find(c => c.name === data.country);
                     if (country) {
                         selectCountry(country, false); // don't save again on load
                         if (data.state) {
-                            // Wait for the state dropdown to be populated
-                            setTimeout(() => {
-                                stateSelect.value = data.state;
-                            }, 0);
+                            stateSelect.value = data.state;
                         }
                     }
                 }
@@ -645,7 +651,7 @@
         // --- Country/State Logic ---
         const populateCountries = (filter = '') => {
             countryListEl.innerHTML = '';
-            const filtered = allCountries.filter(c => c.name.toLowerCase().includes(filter.toLowerCase()));
+            const filtered = countryData.filter(c => c.name.toLowerCase().includes(filter.toLowerCase()));
             if (filtered.length === 0) {
                 countryListEl.innerHTML = `<div class="p-4 text-center text-gray-500">No results found</div>`;
                 return;
@@ -661,10 +667,8 @@
 
         const selectCountry = (country, shouldSave = true) => {
             countrySelected.querySelector('span').textContent = country.name;
-            countrySelected.dataset.countryId = country.id; // Store country ID
             countryDropdownList.classList.remove('open');
-            const statesOfCountry = allStates.filter(s => s.country_id == country.id);
-            populateStates(statesOfCountry);
+            populateStates(country.states);
             clearError('countrySelected');
             if (shouldSave) saveFormData();
         };
@@ -672,10 +676,9 @@
         const populateStates = (states) => {
             stateSelect.innerHTML = '<option value="" disabled selected>Select State / Province</option>';
             if (states && states.length > 0) {
-                states.sort((a, b) => a.name.localeCompare(b.name)); // Sort states alphabetically
                 states.forEach(state => {
                     const option = document.createElement('option');
-                    option.value = state.state_code;
+                    option.value = state.iso2;
                     option.textContent = state.name;
                     stateSelect.appendChild(option);
                 });
@@ -845,37 +848,10 @@
         });
 
         // --- Initial Setup ---
-        const initializeForm = async () => {
-            countrySelected.querySelector('span').textContent = 'Loading countries...';
-            try {
-                const [countriesRes, statesRes] = await Promise.all([
-                    fetch(`${CITIES_API_BASE}/countries.json`),
-                    fetch(`${CITIES_API_BASE}/states.json`)
-                ]);
-
-                if (!countriesRes.ok || !statesRes.ok) {
-                    throw new Error('Failed to load country/state data.');
-                }
-
-                allCountries = await countriesRes.json();
-                allStates = await statesRes.json();
-
-                allCountries.sort((a, b) => a.name.localeCompare(b.name));
-
-                countrySelected.querySelector('span').textContent = 'Select Country';
-                populateCountries();
-                loadFormData();
-
-            } catch (error) {
-                console.error("Error initializing form:", error);
-                countrySelected.querySelector('span').textContent = 'Error loading countries';
-                showError('countrySelected', 'Could not load country data. Please refresh.');
-            }
-        };
-
         updateUI();
+        populateCountries();
         stateSelect.disabled = true;
-        initializeForm();
+        loadFormData();
 
         flatpickr("#dob", {
             altInput: true,
